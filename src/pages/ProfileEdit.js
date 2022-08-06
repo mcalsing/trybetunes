@@ -1,8 +1,14 @@
 import React from 'react';
+import Header from '../components/Header';
 
 class ProfileEdit extends React.Component {
   render() {
-    return <section>Profile Edit</section>;
+    return (
+      <div>
+        <Header />
+        <p>Profile Edit</p>
+      </div>
+    );
   }
 }
 export default ProfileEdit;

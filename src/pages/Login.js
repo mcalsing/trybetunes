@@ -26,10 +26,7 @@ class Login extends React.Component {
     const { history } = this.props;
     history.push('/loading');
 
-    const personalInfo = {
-      name: loginInput,
-    };
-    await createUser(personalInfo);
+    await createUser({ name: loginInput });
 
     history.push('/search');
   }
