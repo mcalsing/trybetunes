@@ -26,7 +26,7 @@ class Header extends React.Component {
         <Link to="/favorites" data-testid="link-to-favorites">Ir para Favoritos</Link>
         <Link to="/profile" data-testid="link-to-profile">Ir para Profile</Link>
         <p data-testid="header-user-name">
-          {loading ? <Loading /> : `Bem vindo, ${userName.name}!` }
+          {loading ? <Loading /> : `Bem vindooo, ${userName.name}!` }
         </p>
       </header>
     );

@@ -35,7 +35,7 @@ class Login extends React.Component {
     const { isEntryButtonDisabled, loginInput } = this.state;
 
     return (
-      <section>
+      <div data-testid="page-login">
         <label htmlFor="login">
           Login:
           <input
@@ -55,7 +55,7 @@ class Login extends React.Component {
             Entrar
           </button>
         </label>
-      </section>
+      </div>
     );
   }
 }
