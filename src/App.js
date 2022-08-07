@@ -1,3 +1,4 @@
+import './App.css';
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import Login from './pages/Login';
@@ -14,26 +15,16 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <h1>TrybeTuness</h1>
 
         <Switch>
-
           <Route exact path="/" component={ Login } />
-
           <Route path="/search" component={ Search } />
-
           <Route exact path="/album/:id" component={ Album } />
-
           <Route path="/favorites" component={ Favorites } />
-
           <Route exact path="/profile" component={ Profile } />
-
           <Route exact path="/profile/edit" component={ ProfileEdit } />
-
           <Route path="/loading" component={ Loading } />
-
           <Route component={ NotFound } />
-
         </Switch>
 
       </div>

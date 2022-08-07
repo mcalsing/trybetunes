@@ -21,13 +21,16 @@ class Header extends React.Component {
   render() {
     const { userName, loading } = this.state;
     return (
-      <header data-testid="header-component">
-        <Link to="/search" data-testid="link-to-search">Ir para Search</Link>
-        <Link to="/favorites" data-testid="link-to-favorites">Ir para Favoritos</Link>
-        <Link to="/profile" data-testid="link-to-profile">Ir para Profile</Link>
+      <header className="header-bar" data-testid="header-component">
+        <h3>TrybeTunes</h3>
         <p data-testid="header-user-name">
-          {loading ? <Loading /> : `Bem vindooo, ${userName.name}!` }
+          {loading ? <Loading /> : `Bem vindo, ${userName.name}!` }
         </p>
+        <nav className="nav-bar">
+          <Link to="/search" data-testid="link-to-search">Search</Link>
+          <Link to="/favorites" data-testid="link-to-favorites">Favoritos</Link>
+          <Link to="/profile" data-testid="link-to-profile">Profile</Link>
+        </nav>
       </header>
     );
   }

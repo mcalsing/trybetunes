@@ -1,0 +1,55 @@
+boby {
+  margin: 0;
+  padding: 0;
+}
+
+.loading {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
+
+label {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.album-list {
+    margin: 20px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.album-card {
+  background-color: rgb(206, 205, 205);
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  align-items: center;
+  width: 200px;
+}
+
+.album-card:hover {
+  background-color: rgb(148, 148, 148);
+}
+
+.album-img {
+  width: 150px;
+}
+
+.header-bar {
+  display: flex;
+  align-items: center;
+  background-color: rgb(146, 182, 151);
+  justify-content: space-between;
+  border-bottom: 1px solid gray;
+  margin-bottom: 20px;
+  padding: 0px 30px;
+}
+
+.nav-bar a {
+  margin: 0 20px;
+}
