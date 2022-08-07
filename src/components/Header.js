@@ -22,7 +22,7 @@ class Header extends React.Component {
     const { userName, loading } = this.state;
     return (
       <header className="header-bar" data-testid="header-component">
-        <h3>TrybeTunes</h3>
+        <Link to="/">TrybeTunes</Link>
         <p data-testid="header-user-name">
           {loading ? <Loading /> : `Bem vindo, ${userName.name}!` }
         </p>

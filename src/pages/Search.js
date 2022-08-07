@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from '../components/Header';
 import searchAlbumsAPI from '../services/searchAlbumsAPI';
-import Loading from '../components/Loading';
+/* import Loading from '../components/Loading'; */
 import AlbumComponent from '../components/AlbumCard';
 
 class Search extends React.Component {
@@ -9,7 +9,7 @@ class Search extends React.Component {
     searchInput: '',
     isSearchButtonDisabled: true,
     searchedAlbum: [],
-    loading: true,
+    /* loading: true, */
     showArtistOnTop: '',
   }
 
@@ -29,13 +29,13 @@ class Search extends React.Component {
   searchButtonClick = async () => {
     const { searchInput } = this.state;
     this.setState({
-      loading: true,
+      /* loading: true, */
       searchedAlbum: await searchAlbumsAPI(searchInput),
       showArtistOnTop: searchInput,
 
     }, () => {
       this.setState({
-        loading: false,
+        /* loading: false, */
         searchInput: '',
       });
     });
