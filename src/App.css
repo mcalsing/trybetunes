@@ -48,3 +48,21 @@ label {
 .nav-bar a {
   margin: 0 20px;
 }
+
+.track-card {
+  align-items: center;
+  background-color: rgb(148, 148, 148);
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+  width: 350px;
+}
+
+.track-card:hover {
+  background-color: rgb(190, 190, 190);
+}
+
+.track-list {
+  display: flex;
+}

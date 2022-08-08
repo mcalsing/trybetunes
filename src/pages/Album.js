@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Header from '../components/Header';
 import getMusics from '../services/musicsAPI';
+import MusicCard from '../components/MusicCard';
 
 class Album extends React.Component {
   state = {
@@ -23,6 +24,11 @@ class Album extends React.Component {
   render() {
     /* const { id } = this.props.match.params; */
     const { musics, artistName, collectionName } = this.state;
+
+    const showMusics = musics.map((music) => (
+      <MusicCard key={ music.trackId } trackCard={ music } />
+    ));
+
     return (
       <section data-testid="page-album">
         <Header />
@@ -34,6 +40,9 @@ class Album extends React.Component {
           <p data-testid="album-name">
             {collectionName}
           </p>
+          <div className="track-list">
+            <p>{showMusics}</p>
+          </div>
         </div>
 
       </section>
