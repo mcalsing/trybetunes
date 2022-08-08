@@ -11,10 +11,10 @@ class AlbumCard extends React.Component {
           <span>{trackName}</span>
         </div>
         <div className="audio">
-          <audio data-testid="audio-component" src="{previewUrl}" controls>
+          <audio data-testid="audio-component" src={ previewUrl } controls>
             <track kind="captions" />
             O seu navegador não suporta o elemento
-            <code>{previewUrl}</code>
+            <code>audio</code>
           </audio>
         </div>
       </section>
