@@ -14,8 +14,7 @@ class Album extends React.Component {
   componentDidMount = async () => {
     const { match: { params: { id } } } = this.props;
     const [album, ...musics] = await getMusics(id);
-    console.log(album);
-    console.log(musics);
+    // console.log(musics); */
     const { artistName, collectionName } = album;
 
     this.setState({ musics, artistName, collectionName });
@@ -26,7 +25,7 @@ class Album extends React.Component {
     const { musics, artistName, collectionName } = this.state;
 
     const showMusics = musics.map((music) => (
-      <MusicCard key={ music.trackId } trackCard={ music } />
+      <MusicCard key={ music.trackId } albumCard={ music } />
     ));
 
     return (
