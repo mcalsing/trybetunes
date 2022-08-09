@@ -3,30 +3,35 @@ import PropTypes from 'prop-types';
 import Header from '../components/Header';
 import getMusics from '../services/musicsAPI';
 import MusicCard from '../components/MusicCard';
+import { getFavoriteSongs } from '../services/favoriteSongsAPI';
 
 class Album extends React.Component {
   state = {
     artistName: '',
     collectionName: '',
     musics: [],
+    favoriteMusics: [],
   }
 
   componentDidMount = async () => {
     const { match: { params: { id } } } = this.props;
     const [album, ...musics] = await getMusics(id);
-    // console.log(musics); */
     const { artistName, collectionName } = album;
-
-    this.setState({ musics, artistName, collectionName });
+    const favoriteMusics = await getFavoriteSongs();
+    this.setState({ musics, artistName, collectionName, favoriteMusics });
   }
 
   render() {
     /* const { id } = this.props.match.params; */
-    const { musics, artistName, collectionName } = this.state;
-
-    const showMusics = musics.map((music) => (
-      <MusicCard key={ music.trackId } albumCard={ music } />
-    ));
+    const { musics, artistName, collectionName, favoriteMusics } = this.state;
+    const showMusics = musics.map((music) => {
+      const isFavorite = favoriteMusics.some(({ trackId }) => trackId === music.trackId);
+      return (<MusicCard
+        key={ music.trackId }
+        albumCard={ music }
+        trueFavorite={ isFavorite }
+      />);
+    });
 
     return (
       <section data-testid="page-album">

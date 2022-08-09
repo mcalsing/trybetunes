@@ -9,6 +9,11 @@ class AlbumCard extends React.Component {
     loading: false,
   }
 
+  componentDidMount = () => {
+    const { trueFavorite } = this.props;
+    this.setState({ isFavorite: trueFavorite });
+  }
+
   handleCheckbox = async (event) => {
     const { name, checked } = event.target;
     console.log(checked);
